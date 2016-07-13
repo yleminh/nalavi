@@ -1,0 +1,54 @@
+<section class="content-header">
+  <h1>
+    Book Languages Management
+    <small>List</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+  </ol>
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">List Book Languages</h3>
+
+              <div class="box-tools">
+                <%= link_to "Add new", book_languages_new_path, class: 'btn btn-success' %>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+            <% if @blangs.size > 0 %>
+              <table class="table table-hover">
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>Created at</th>
+                  <th>Created by</th>
+                  <th>Action</th>
+                </tr>
+                <% @blangs.each do |f| %>
+                  <tr>
+                  <td><%= f.id %></td>
+                  <td><%= f.name %></td>
+                  <td><%= f.description %></td>
+                  <td><%= f.created_at %></td>
+                  <td><%= f.created_by %></td>
+                  <td><%= link_to 'Edit', edit_book_language_path(f), class:'btn btn-primary' %><%= link_to 'Delete', book_language_path(f), class:'btn btn-danger', method: :delete, data: {confirm: 'Bạn có muốn xóa Item này không ?'} %></td>
+                </tr>  
+                <% end %>
+              </table>
+             <% else %>
+                 <p>Chưa có danh mục nào</p>
+             <% end %>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+      </div>
+</section>

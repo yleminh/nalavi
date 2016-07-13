@@ -22,9 +22,21 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'simple_form'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+gem "font-awesome-rails"
+gem 'nprogress-rails'
+gem 'ckeditor'
+gem 'kaminari'
+gem 'friendly_id'
+gem 'will_paginate-bootstrap'
+gem 'bootstrap-kaminari-views'
+gem 'rails-api'
+gem 'video_info', '~> 2.5'
+gem 'babosa', '~> 1.0', '>= 1.0.2'
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -35,6 +47,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'pry-rails'
 end
 
 group :development do

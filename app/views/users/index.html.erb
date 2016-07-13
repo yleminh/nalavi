@@ -1,0 +1,58 @@
+<section class="content-header">
+  <h1>
+    User Management
+    <small>List</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+  </ol>
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">List Users</h3>
+
+              <div class="box-tools">
+                <%= link_to "Add new", users_new_path, class: 'btn btn-success' %>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+            <% if @users.size > 0 %>
+              <table class="table table-hover">
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Role</th>
+                  <th>Provider</th>
+                  <th>Created at</th>
+                  <th>Created by</th>
+                  <th>Action</th>
+                </tr>
+                <% @users.each do |f| %>
+                  <tr>
+                  <td><%= f.id %></td>
+                  <td><%= f.name %></td>
+                  <td><%= f.email %></td>
+                  <td><%= f.role.name %></td>
+                  <td><%= f.provider %></td>
+                  <td><%= f.created_at %></td>
+                  <td><%= f.created_by %></td>
+                  <td><%= link_to 'Edit', edit_user_path(f), class:'btn btn-primary' %><%= link_to 'Delete', user_path(f), class:'btn btn-danger', method: :delete, data: {confirm: 'Bạn có muốn xóa Tài Khoản này không ?'} %></td>
+                </tr>  
+                <% end %>
+              </table>
+             <% else %>
+                 <p>Chưa có tài khoản nào</p>
+             <% end %>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+      </div>
+</section>

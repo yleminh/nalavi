@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+@import "AdminLTE.min.css";
+@import "_all-skins.min.css";
+@import "iCheck/flat/blue.css";
+@import "morris/morris.css";
+@import "jvectormap/jquery-jvectormap-1.2.2.css";
+@import "datepicker/datepicker3.css";
+@import "daterangepicker/daterangepicker-bs3.css";
+@import "bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css";
+
+

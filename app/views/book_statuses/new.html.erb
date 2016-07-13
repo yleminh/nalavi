@@ -1,0 +1,47 @@
+<section class="content-header">
+  <h1>
+    Book Statuses Management
+    <small>List</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+  </ol>
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Add new Status</h3>
+            </div>
+            <!-- /.box-header -->
+            <%= form_for @book_status, :html => {class: 'form-horizontal '} do |f| %>
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
+                        <div class="col-sm-10">
+                            <%= f.text_field :name, class:'form-control', placeholder:'Name', id: 'inputEmail', required:'required' %>
+                          </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">Description</label>
+                
+                      <div class="col-sm-10">
+                        <%= f.text_field :description, class:'form-control', placeholder:'Description', id: 'inputDescription', required:'required' %>
+                      </div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    <%= link_to "Cancel", book_statuses_path, class:'btn btn-default' %>
+                    <%= f.submit "Create", class:'btn btn-info pull-right' %>
+                </div>
+            <!-- /.box-footer -->
+            <% end %>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+    </div>
+</section>
