@@ -80,9 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: nalavi
+  database: nalavi_production
   username: nalavi
-  password: H0ngkhanH
-  host: 45.63.120.181
-  port: 5432
+  password: <%= ENV['NALAVI_DATABASE_PASSWORD'] %>
   

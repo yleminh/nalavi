@@ -7,9 +7,6 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.new(user_params)
-  	
-  	byebug
-  	
     @user.provider = "Website"
     @user.created_by = "Admin"
     @user.updated_by = "Admin"
@@ -27,6 +24,7 @@ class UsersController < ApplicationController
   end
   
   def update
+    byebug
     @user = User.find(params[:id])
      
      if @role.update(:updated_at => DateTime.now, :name => role_params[:name], :description => role_params[:description])

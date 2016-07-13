@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
       redirect_to dang_nhap_path
     else
       params[:user_id] = session[:user_id]
+      @user = User.find(params[:user_id])
     end
   end
   
